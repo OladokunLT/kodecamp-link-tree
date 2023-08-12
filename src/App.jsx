@@ -1,15 +1,11 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import profile  from './assets/profile-img.png'
-import smShare  from './assets/share-icon-arrow.svg'
-import mdShare  from './assets/share-icon-desktop.svg'
+import github  from './assets/github.svg'
+import slack  from './assets/slack.svg'
+import KodeCampLogo  from './assets/kodecamp-logo-left.png'
+import kodeHauzLogo from './assets/kodeHauz-Logo-right.png'
 import './App.css'
 
-
 function App() {
-  // const [count, setCount] = useState(0)
-
   return (
     <>
       <div className="wrapper">
@@ -22,8 +18,30 @@ function App() {
           </figure>
         </header>
         <main className="main-section">
-          
+          <button className="link-tree-btn">Twitter Links</button>
+          <button className="link-tree-btn">KodeCamp Team</button>
+          <button className="link-tree-btn">KodeCamp Books</button>
+          <button className="link-tree-btn">Python Books</button>
+          <button className="link-tree-btn">Background Check for Coders</button>
+          <button className="link-tree-btn">Design Books</button>
+          <button className="link-tree-btn">
+            <span className='dev-comm'>
+              <img src={slack} alt="" />
+            </span>
+            <span className='dev-comm'>
+              <img src={github} alt="" />
+            </span>
+          </button>
         </main>
+        <footer className='footer'>
+          <span>
+            <img src={KodeCampLogo} alt="" />
+            </span>
+          <p>KodeCamp Internship Task</p>
+          <span>
+            <img src={kodeHauzLogo} alt="" />
+            </span>
+        </footer>
 
       </div>
     </>
