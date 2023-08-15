@@ -25,11 +25,11 @@ const Header = () => {
 }
 
 import PropTypes from "prop-types";
+
+const Button = (props) => <button className="link-tree-btn">{props.name}</button>
 Button.propTypes = {
   name: PropTypes.string.isRequired
 }
-
-const Button = (props) => <button className="link-tree-btn">{props.name}</button>
 
 const buttons = [
   {id: 1, text: "Twitter Links" },
