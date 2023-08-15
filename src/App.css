@@ -15,6 +15,7 @@ html {
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
+source,
 img {
   width: 100%;
   height: 100%;
@@ -25,13 +26,28 @@ img {
   margin-top: 4.31rem;
   margin-bottom: 2.88rem;
 }
+.header {
+  display: flex;
+  flex-direction: column;
+}
 .header figure {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 1.6175rem;
   align-self: stretch;
+  position: relative;
+}
+picture {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  box-shadow: 0 0 1px .1px var(--gray-900); 
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+  top: -15px;
+  cursor: pointer;
 }
 .profile-container {
   display: flex;
@@ -59,27 +75,27 @@ img {
   padding-top: 2.16rem;
   padding-bottom: 2.16rem;
 }
+
 .link-tree-btn {
   display: flex;
-  padding: 1.6175rem 2.15669rem;
   justify-content: center;
   align-items: center;
   gap: 0.53919rem;
-  flex: 1 0 0;
+  align-self: stretch;
   border-radius: 0.53919rem;
   border: 1.078px solid var(--gray-200);
   background: var(--gray-200);
   color: var(--gray-900);
-  width: 100%;
+  cursor: pointer;
+  padding: 1.6175rem 2.15669rem;
+  line-height: 1.25rem; /* 142.857% */
   font-size: 0.875rem;
   font-weight: 500;
-  line-height: 1.25rem; /* 142.857% */
-  cursor: pointer;
 }
 .link-tree-btn:last-of-type {
   background: none;
   border: none;
-  cursor: none;
+  cursor: default;
   gap: 1.62rem;
 }
 span {
@@ -104,6 +120,9 @@ span {
     font-size: 1.125rem;
     font-weight: 500;
     line-height: 1.75rem; /* 155.556% */
+  }
+  picture {
+    right: 20%;
   }
 }
 @media (width >= 768px) {
