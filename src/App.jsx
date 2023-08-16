@@ -6,6 +6,30 @@ import kodeHauzLogo from './assets/kodeHauz-Logo-right.png'
 import shareIconMobile from './assets/share-icon-arrow.svg'
 import shareIconDesktop from './assets/share-icon-desktop.svg'
 import './App.css'
+import PropTypes from "prop-types";
+
+function App() {
+  return (
+    <div className="wrapper">  
+      < Header />
+      < Main /> 
+      < Footer />
+    </div>
+  )
+}
+
+const buttons = [
+  {id: 1, text: "Twitter Links" },
+  {id: 2, text: "KodeCamp Team" },
+  {id: 3, text: "KodeCamp Books" },
+  {id: 4, text: "Python Books" },
+  {id: 5, text: "Background Check for Coders" },
+  {id: 6, text: "Design Books"}
+];
+
+const Button = (props) => <button className="link-tree-btn"> {props.name} </button>
+
+const SpanIcons = (props) => <span> <img src={props.icon} alt="" /> </span>
 
 const Header = () => {
   return (
@@ -24,35 +48,6 @@ const Header = () => {
   );
 }
 
-import PropTypes from "prop-types";
-
-const Button = (props) => <button className="link-tree-btn">{props.name}</button>
-
-Button.propTypes = {
-  name: PropTypes.string.isRequired
-}
-SpanIcons.propTypes = {
-  icon: PropTypes.object.isRequired
-}
-
-const buttons = [
-  {id: 1, text: "Twitter Links" },
-  {id: 2, text: "KodeCamp Team" },
-  {id: 3, text: "KodeCamp Books" },
-  {id: 4, text: "Python Books" },
-  {id: 5, text: "Background Check for Coders" },
-  {id: 6, text: "Design Books"}
-];
-
-const SpanIcons = (props) => {
-  return (
-    <span>
-      <img src={props.icon} alt="" />
-    </span>
-  );
-}
-
-
 const Main = () => {
   return (
     <main className="main-section">
@@ -62,8 +57,8 @@ const Main = () => {
        ))
       }     
       <button className="link-tree-btn">
-        <SpanIcons name= {slack} />
-        <SpanIcons name= {github} />
+        <SpanIcons icon = {slack} />
+        <SpanIcons icon = {github} />
       </button>
     </main>
   );
@@ -79,13 +74,12 @@ const Footer = () => {
   );
 }
 
-function App() {
-  return (
-    <div className="wrapper">  
-      < Header />
-      < Main /> 
-      < Footer />
-    </div>
-  )
+Button.propTypes = {
+  name: PropTypes.string.isRequired
 }
+SpanIcons.propTypes = {
+  icon: PropTypes.string.isRequired
+}
+
+
 export default App
