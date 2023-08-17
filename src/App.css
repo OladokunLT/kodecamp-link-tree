@@ -8,8 +8,10 @@ html {
   font-size: 16px;
 }
 :root {
-  --gray-900: #101828;
-  --gray-200: #EAECF0;
+  --gray-900: #101828; /* default text */
+  --gray-200: #EAECF0; /* default state */
+  --gray-300: #D0D5DD; /* hover state */
+  --gray-400: #98A2B3; /* onFocus state */
 }
 
 body {
@@ -48,6 +50,7 @@ picture {
   right: 10px;
   top: -15px;
   cursor: pointer;
+  border-radius: 17.1875rem;
 }
 .profile-container {
   display: flex;
@@ -57,7 +60,15 @@ picture {
   justify-content: center;
   align-items: center;
   border-radius: 18.53388rem;
+  background: linear-gradient(0deg, rgba(52, 64, 84, 0.75) 0%, rgba(52, 64, 84, 0.75) 100%);
 }
+.profile-container img:hover {
+  opacity: 0.4;
+}
+.profile-container img:focus{
+  border: 5.5px solid #EBE9FE;
+}
+
 .username {
   color: var(--gray-900);
   font-size: 1.21313rem;
@@ -83,7 +94,7 @@ picture {
   gap: 0.53919rem;
   align-self: stretch;
   border-radius: 0.53919rem;
-  border: 1.078px solid var(--gray-200);
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
   background: var(--gray-200);
   color: var(--gray-900);
   cursor: pointer;
@@ -91,12 +102,30 @@ picture {
   line-height: 1.25rem; /* 142.857% */
   font-size: 0.875rem;
   font-weight: 500;
+  border : none
 }
 .link-tree-btn:last-of-type {
   background: none;
   border: none;
   cursor: default;
   gap: 1.62rem;
+}
+.link-tree-btn:last-of-type:hover {
+  background: none;
+  border: none;
+}
+.link-tree-btn:last-of-type:focus {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+.link-tree-btn:hover {
+  border: 1px solid var(--gray-300, #D0D5DD);
+  background: var(--gray-300, #D0D5DD);
+}
+.link-tree-btn:focus {
+  border: 1px solid var(--gray-400, #98A2B3);
+  box-shadow: 0px 0px 0px 4px #EBE9FE, 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
 }
 span {
   cursor: pointer;
@@ -122,9 +151,10 @@ span {
     line-height: 1.75rem; /* 155.556% */
   }
   picture {
-    right: 20%;
+    right: 15%;
   }
 }
+
 @media (width >= 768px) {
   .wrapper {
     width: 80%;
@@ -138,13 +168,14 @@ span {
     justify-content: space-between;
     gap: 4.31338rem;
   }
-
 }
+
 @media (width >= 1024px) {
   .wrapper {
     width: 75%;
   }
 }
+
 @media (width >= 1440px) {
   .wrapper {
     width: 70%;
