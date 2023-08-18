@@ -61,12 +61,26 @@ picture {
   align-items: center;
   border-radius: 18.53388rem;
   background: linear-gradient(0deg, rgba(52, 64, 84, 0.75) 0%, rgba(52, 64, 84, 0.75) 100%);
+  position: relative;
 }
-.profile-container img:hover {
+.profile-container:hover img {
   opacity: 0.4;
 }
 .profile-container img:focus{
   border: 5.5px solid #EBE9FE;
+}
+.profile-container .input-file {
+  display: none;
+}
+.profile-container .load-image {
+  position: absolute;
+  bottom: 2px;
+}
+.load-image .camera {
+  width: 25px;
+  height: 25px;
+  opacity: .4;
+  cursor: pointer;
 }
 
 .username {

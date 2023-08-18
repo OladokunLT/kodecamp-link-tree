@@ -5,6 +5,7 @@ import KodeCampLogo  from './assets/kodecamp-logo-left.png'
 import kodeHauzLogo from './assets/kodeHauz-Logo-right.png'
 import shareIconMobile from './assets/share-icon-arrow.svg'
 import shareIconDesktop from './assets/share-icon-desktop.svg'
+import camera from './assets/photo-camera.png'
 import './App.css'
 import PropTypes from "prop-types";
 
@@ -40,9 +41,11 @@ const Header = () => {
           <img src={shareIconDesktop} alt="" />
         </picture>
         <div className='profile-container'>
-          <img src={profile} alt="User profile image" />
+          <img src={profile} alt="User profile image" className='profile-image'/>
+          <label htmlFor="input-file" className='load-image'> <img src={camera} alt="Update profile photo" className='camera' /> </label>
+          <input type="file" name="input-file" id="input-file" className='input-file' />
         </div>
-        <figcaption className="username">John Doe</figcaption>
+        <figcaption className="username"> John Doe </figcaption>
       </figure>
     </header>
   );
@@ -81,5 +84,14 @@ SpanIcons.propTypes = {
   icon: PropTypes.string.isRequired
 }
 
+/******** Code below: Upload Profile picture Refused to work properly  **********
+let inputFile = document.querySelector(".input-file")
+let profileImage = document.querySelector(".profile-image")
+
+function handleProfileImage(){
+  console.log(inputFile);
+  profileImage.src = URL.createObjectURL(inputFile.files[0])
+}
+*/
 
 export default App
